@@ -1,6 +1,6 @@
 # Quantifying-Sales-Uplift-With-Causal-Impact-Analysis
 
-![](Images/association-rules-title-img.png)
+![](Images/casual-impact-title-img.png)
 
 In this project we use Causal Impact Analysis to analyse & understand the sales uplift of customers that joined the new "Delivery Club" campaign!.
 
