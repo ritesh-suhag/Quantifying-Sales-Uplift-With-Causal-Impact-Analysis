@@ -1,10 +1,8 @@
 # Quantifying-Sales-Uplift-With-Causal-Impact-Analysis
 
+![](Images/association-rules-title-img.png)
+
 In this project we use Causal Impact Analysis to analyse & understand the sales uplift of customers that joined the new "Delivery Club" campaign!.
-
-> [Causal Impact Analysis, Python]
-
-![](causal-impact-title-img.png)
 
 # Table of contents
 
@@ -47,7 +45,6 @@ We used a 3 months pre-period for the algorithm to model, 3 months post-period f
 
 We saw a 41.1% uplift in sales for those customers that joined the Delivery Club, over and above what we believe they would have spent, had the club not been in existence.  This was across the three month post-period, and the uplift was deemed to be significantly significant (@ 95%).
 
-
 ### Growth/Next Steps <a name="overview-growth"></a>
 
 It would be interesting to look at this pool of customers (both those who did and did not join the Delivery club) and investigate if there were any differences in sales in these time periods *last year* - this would help us understand if any of the uplift we are seeing here is actually the result of seasonality.
@@ -82,7 +79,6 @@ But there are a lot of cases where we just can’t run a randomised experiment, 
 
 An approach that works really well in both scenarios, is Causal Impact Analysis.
 
-
 #### How It Works
 
 Causal Impact is a time-series technique, originally developed by Google.
@@ -105,7 +101,6 @@ Once the algorithm has modelled this relationship, it then looks to apply the le
 
 Once we have this counterfactual, we can proceed to calculate the estimation for the causal effect, or in other words, the effect caused by our event!
 
-
 #### Application
 
 Here we will utilise a Python package called **pycausalimpact** to apply this algorithm to our data.  This will model the relationships, and provide very useful plots and summarises to help us understand the results.
@@ -127,6 +122,7 @@ In the code below, we:
 * Pivot & aggregate to give us aggregated daily sales by signed-up/did not sign-up groups
 * Manoeuvre the data specifically for the pycausalimpact algorithm
 * Give our groups some meaningful names, to help with interpretation
+
 
 ```python
 
@@ -201,7 +197,6 @@ ___
 
 # Analysing The Results <a name="causal-impact-results"></a>
 
-
 #### Plotting The Results
 
 The *pycausalimpact* library makes plotting the results extremely easy - all done with the single line of code below:
@@ -215,8 +210,7 @@ ci.plot()
 
 The resulting plot(s) can be seen below.
 
-![alt text](/img/posts/causal-impact-results-plot.png "Causal Impact Results Plot")
-
+![alt text](Images/causal-impact-results-plot.png "Causal Impact Results Plot")
 
 To explain what we have in the above image...
 
@@ -282,7 +276,6 @@ If we put:
 
 # results summary - report
 print(ci.summary(output = "report"))
-```
 
 Analysis report {CausalImpact}
 
@@ -302,10 +295,11 @@ of the underlying intervention.
 The probability of obtaining this effect by chance is very small (Bayesian one-sided tail-area probability p = 0.0). This means the causal effect can be considered statistically
 significant.
 
+```
+
 So, this is the same information as we saw above, but put into a written report which can go straight to the client.
 
 The high level story of this that, yes, we did see an uplift in sales for those customers that joined the Delivery Club, over and above what we believe they would have spent, had the club not been in existence.  This uplift was deemed to be significantly significant (@ 95%)
-
 ___
 
 # Growth & Next Steps <a name="growth-next-steps"></a>
